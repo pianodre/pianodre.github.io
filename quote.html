@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote - TRSTxCYBER</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .quote-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-step {
+            display: none;
+        }
+        
+        .form-step.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            background-color: #0056b3;
+            color: 1a1a1a;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #003d82;
+        }
+        
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background-color: #0056b3;
+            width: 50%;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include navigation -->
+    <div id="nav-placeholder"></div>
+    
+    <main>
+        <div class="quote-container">
+            <h1>Get a Customized Quote</h1>
+            <p>Please provide your information to receive a personalized quote for our services.</p>
+            
+            <div class="progress-bar">
+                <div class="progress" id="progress-indicator"></div>
+            </div>
+            
+            <form id="quote-form">
+                <!-- Step 1: Contact Information -->
+                <div class="form-step active" id="step-1">
+                    <h2>Contact Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="firstName">First Name*</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name*</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="businessName">Business Name*</label>
+                        <input type="text" id="businessName" name="businessName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phoneNumber">Primary Phone Number*</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <div></div> <!-- Empty div for spacing -->
+                        <button type="button" class="btn" id="next-step-1">Next</button>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Business Information -->
+                <div class="form-step" id="step-2">
+                    <h2>Business Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="employees">Number of Employees*</label>
+                        <input type="number" id="employees" name="employees" min="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="industry">Industry*</label>
+                        <select id="industry" name="industry" required>
+                            <option value="">Select Industry</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="finance">Finance & Banking</option>
+                            <option value="retail">Retail</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="technology">Technology</option>
+                            <option value="education">Education</option>
+                            <option value="government">Government</option>
+                            <option value="legal">Legal</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="annualRevenue">Annual Revenue (USD)*</label>
+                        <select id="annualRevenue" name="annualRevenue" required>
+                            <option value="">Select Revenue Range</option>
+                            <option value="under1m">Under $1 million</option>
+                            <option value="1m-5m">$1 million - $5 million</option>
+                            <option value="5m-10m">$5 million - $10 million</option>
+                            <option value="10m-50m">$10 million - $50 million</option>
+                            <option value="50m-100m">$50 million - $100 million</option>
+                            <option value="over100m">Over $100 million</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="currentSecurity">Current Security Measures (select all that apply)</label>
+                        <div>
+                            <input type="checkbox" id="firewall" name="security" value="firewall">
+                            <label for="firewall">Firewall</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="antivirus" name="security" value="antivirus">
+                            <label for="antivirus">Antivirus Software</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="encryption" name="security" value="encryption">
+                            <label for="encryption">Data Encryption</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="mfa" name="security" value="mfa">
+                            <label for="mfa">Multi-Factor Authentication</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="backup" name="security" value="backup">
+                            <label for="backup">Regular Data Backup</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="training" name="security" value="training">
+                            <label for="training">Employee Security Training</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-secondary" id="prev-step-2">Previous</button>
+                        <button type="button" class="btn" id="submit-quote">Get Quote</button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Confirmation -->
+                <div class="form-step" id="step-3">
+                    <h2>Thank You!</h2>
+                    <p>Your information has been submitted. We'll calculate a customized quote for your business and contact you shortly.</p>
+                    <div id="quote-summary"></div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-secondary" id="prev-step-3">Back</button>
+                        <button type="button" class="btn" id="finish">Finish</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Load navigation
+        $(function() {
+            $("#nav-placeholder").load("nav.html");
+        });
+        
+        // Form navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const steps = document.querySelectorAll('.form-step');
+            let currentStep = 0;
+            
+            // Phone number formatting
+            const phoneInput = document.getElementById('phoneNumber');
+            phoneInput.addEventListener('input', function(e) {
+                // Get only digits from the input
+                let digits = this.value.replace(/\D/g, '');
+                
+                // Limit to 10 digits
+                digits = digits.substring(0, 10);
+                
+                // Format as (xxx) xxx-xxxx
+                if (digits.length > 0) {
+                    if (digits.length <= 3) {
+                        this.value = '(' + digits;
+                    } else if (digits.length <= 6) {
+                        this.value = '(' + digits.substring(0, 3) + ') ' + digits.substring(3);
+                    } else {
+                        this.value = '(' + digits.substring(0, 3) + ') ' + digits.substring(3, 6) + '-' + digits.substring(6);
+                    }
+                }
+            });
+            
+            // First name capitalization
+            const firstNameInput = document.getElementById('firstName');
+            firstNameInput.addEventListener('blur', function() {
+                // Capitalize first letter of each word
+                this.value = this.value.replace(/\b\w/g, function(txt) { 
+                    return txt.toUpperCase(); 
+                });
+            });
+            
+            // Last name capitalization
+            const lastNameInput = document.getElementById('lastName');
+            lastNameInput.addEventListener('blur', function() {
+                // Capitalize first letter of each word
+                this.value = this.value.replace(/\b\w/g, function(txt) { 
+                    return txt.toUpperCase(); 
+                });
+            });
+            
+            // Business name capitalization
+            const businessNameInput = document.getElementById('businessName');
+            businessNameInput.addEventListener('blur', function() {
+                // Capitalize first letter of each word
+                this.value = this.value.replace(/\b\w/g, function(txt) { 
+                    return txt.toUpperCase(); 
+                });
+            });
+            
+            // Email validation function
+            function isValidEmail(email) {
+                // Check for basic email format
+                const basicEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                // Check for hyphens or periods before the @ symbol
+                const beforeAtSymbol = email.split('@')[0];
+                const hasInvalidChars = /[-.]/.test(beforeAtSymbol);
+                
+                return basicEmailRegex.test(email) && !hasInvalidChars;
+            }
+            
+            // Phone validation function
+            function isValidPhone(phone) {
+                // Check if we have 10 digits after removing formatting
+                const digits = phone.replace(/\D/g, '');
+                return digits.length === 10;
+            }
+            
+            // Update progress bar
+            function updateProgress() {
+                const progress = ((currentStep + 1) / steps.length) * 100;
+                const progressBar = document.getElementById('progress-indicator');
+                progressBar.style.width = `${progress}%`;
+            }
+            
+            // Next button for step 1
+            document.getElementById('next-step-1').addEventListener('click', function() {
+                // Validate step 1
+                const firstName = document.getElementById('firstName').value.trim();
+                const lastName = document.getElementById('lastName').value.trim();
+                const businessName = document.getElementById('businessName').value.trim();
+                const phoneNumber = document.getElementById('phoneNumber').value.trim();
+                const email = document.getElementById('email').value.trim();
+                
+                // Check if all required fields are filled
+                if (!firstName || !lastName || !businessName || !phoneNumber || !email) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                // Validate business name length
+                if (businessName.length <= 3) {
+                    alert('Business name must be longer than 3 characters.');
+                    return;
+                }
+                
+                // Validate phone number format
+                if (!isValidPhone(phoneNumber)) {
+                    alert('Please enter a valid 10-digit phone number.');
+                    return;
+                }
+                
+                // Validate email format
+                if (!isValidEmail(email)) {
+                    // Check specifically for hyphens or periods
+                    const beforeAtSymbol = email.split('@')[0];
+                    if (/[-.]/.test(beforeAtSymbol)) {
+                        alert('Email address cannot contain hyphens (-) or periods (.) before the @ symbol.');
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                    return;
+                }
+                
+                // Move to step 2
+                steps[currentStep].classList.remove('active');
+                currentStep = 1;
+                steps[currentStep].classList.add('active');
+                updateProgress();
+            });
+            
+            // Previous button for step 2
+            document.getElementById('prev-step-2').addEventListener('click', function() {
+                steps[currentStep].classList.remove('active');
+                currentStep = 0;
+                steps[currentStep].classList.add('active');
+                updateProgress();
+            });
+            
+            // Submit quote button
+            document.getElementById('submit-quote').addEventListener('click', function() {
+                // Validate step 2
+                const employees = document.getElementById('employees').value;
+                const industry = document.getElementById('industry').value;
+                const annualRevenue = document.getElementById('annualRevenue').value;
+                
+                if (!employees || !industry || !annualRevenue) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                // Generate quote summary
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const businessName = document.getElementById('businessName').value;
+                
+                const summary = document.getElementById('quote-summary');
+                summary.innerHTML = `
+                    <div class="summary-box">
+                        <h3>Quote Request Summary</h3>
+                        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+                        <p><strong>Business:</strong> ${businessName}</p>
+                        <p><strong>Employees:</strong> ${employees}</p>
+                        <p><strong>Industry:</strong> ${industry}</p>
+                        <p>We'll contact you shortly with a customized quote.</p>
+                    </div>
+                `;
+                
+                // Move to step 3
+                steps[currentStep].classList.remove('active');
+                currentStep = 2;
+                steps[currentStep].classList.add('active');
+                updateProgress();
+                
+                // Here you would typically send the form data to a server
+                // This is where you'll add your price calculator logic later
+            });
+            
+            // Previous button for step 3
+            document.getElementById('prev-step-3').addEventListener('click', function() {
+                steps[currentStep].classList.remove('active');
+                currentStep = 1;
+                steps[currentStep].classList.add('active');
+                updateProgress();
+            });
+            
+            // Finish button
+            document.getElementById('finish').addEventListener('click', function() {
+                window.location.href = 'homepage.html';
+            });
+            
+            // Initialize progress bar
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

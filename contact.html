@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('nav-placeholder').innerHTML = data;
+                });
+                
+            // Name capitalization
+            const nameInput = document.getElementById('name');
+            nameInput.addEventListener('blur', function() {
+                // Capitalize first letter of each word
+                this.value = this.value.replace(/\b\w/g, function(txt) { 
+                    return txt.toUpperCase(); 
+                });
+            });
+            
+            // Phone number formatting
+            const phoneInput = document.getElementById('phone');
+            phoneInput.addEventListener('input', function(e) {
+                // Get only digits from the input
+                let digits = this.value.replace(/\D/g, '');
+                
+                // Limit to 10 digits
+                digits = digits.substring(0, 10);
+                
+                // Format as (xxx) xxx-xxxx
+                if (digits.length > 0) {
+                    if (digits.length <= 3) {
+                        this.value = '(' + digits;
+                    } else if (digits.length <= 6) {
+                        this.value = '(' + digits.substring(0, 3) + ') ' + digits.substring(3);
+                    } else {
+                        this.value = '(' + digits.substring(0, 3) + ') ' + digits.substring(3, 6) + '-' + digits.substring(6);
+                    }
+                }
+            });
+            
+            // Email validation and input restrictions
+            const emailInput = document.getElementById('email');
+            const contactForm = document.getElementById('contactForm');
+            
+            // Prevent typing hyphens or periods before @ symbol
+            emailInput.addEventListener('input', function(e) {
+                const value = this.value;
+                const atIndex = value.indexOf('@');
+                
+                // If @ hasn't been typed yet, check for hyphens and periods
+                if (atIndex === -1) {
+                    // If user tries to type a hyphen or period, remove it
+                    if (value.match(/[-.]$/)) {
+                        this.value = value.slice(0, -1);
+                        alert('Email address cannot contain hyphens (-) or periods (.) before the @ symbol.');
+                    }
+                }
+            });
+            
+            // Final validation on form submission
+            contactForm.addEventListener('submit', function(e) {
+                const email = emailInput.value.trim();
+                const beforeAtSymbol = email.split('@')[0];
+                
+                // Check for hyphens or periods before the @ symbol
+                if (/[-.]/.test(beforeAtSymbol)) {
+                    e.preventDefault();
+                    alert('Email address cannot contain hyphens (-) or periods (.) before the @ symbol.');
+                    return false;
+                }
+            });
+        });
+    </script>
+
+    <main class="container">
+        <h1>Contact Us</h1>
+        <p class="contact-intro">Get in touch with our team for inquiries, support, or to learn more about our services.</p>
+        
+        <div class="contact-grid">
+            <div class="contact-message-container">
+                <h2>Send us a Message</h2>
+                <form class="contact-form" id="contactForm" onsubmit="event.preventDefault(); this.reset(); alert('Message sent!'); return false;">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone (optional)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Select a subject</option>
+                            <option value="cybersecurity">Cybersecurity Services</option>
+                            <option value="insurance">Cyber Insurance</option>
+                            <option value="it-support">IT Support</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <div class="info-item">
+                    <h3>Phone</h3>
+                    <p>+1 (714) 642-3677</p>
+                </div>
+                <div class="info-item">
+                    <h3>Email</h3>
+                    <p>info@trstxcyber.com</p>
+                </div>
+                <div class="info-item">
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 5:00 PM<br>
+                    Saturday - Sunday: Closed</p>
+                </div>
+                
+                <div class="info-item intake-form">
+                    <h3>Business Intake Form</h3>
+                    <p>To provide us with detailed information about your business, please complete our intake form:</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSedeI7aFk0wbprlvo1OnE3ZCDftwvoDIqLZvv2--k9IyNzdTg/viewform?usp=sharing&ouid=101497368045679828897" class="google-form-btn" target="_blank">Complete Business Intake Form</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

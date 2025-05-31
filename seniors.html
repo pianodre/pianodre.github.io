@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Seniors</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body class="inner-page">
+    <header>
+        <div class="container">
+            <h1>Cybersecurity for Seniors</h1>
+            <p class="subtitle">Specialized Protection for Seniors in the Digital Age</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- First Bottom Section (Duplicate) -->
+        <section class="bottom-section">
+            <div class="container">
+                <div class="bottom-flex">
+                    <!-- Left Side -->
+                    <div class="left-side">
+                        <h2 class="highlight-title">Protect Your Loved Ones with TSRT Senior Guard*<br>
+                            <span class="powered-by">Powered by EverSafe</span></h2>
+                        <p class="section-description">As a “second set of eyes,” this is an indispensable financial wellness tool for seniors and caregivers. Keep track of your family’s finances, credit, bills, and even real estate with constant visbility.  This easy to use application analyzes activity across accounts and institutions – because that’s how scammers operate.</p>
+                        <div class="cta-box">
+                            <h3 class="cta-title">Ready to secure your digital identity?</h3>
+                            <a href="contact.html" class="submit-btn" style="text-decoration: none;">Contact Us</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side - Image -->
+                    <div class="right-side">
+                        <div class="senior-image-container">
+                            <img src="images/senior.png" alt="Senior Cybersecurity" class="senior-full-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacer -->
+        <div class="spacer"></div>
+        
+        <!-- Bottom Section (similar to BlackCloak page) -->
+        <section class="bottom-section">
+            <div class="container">
+                <div class="bottom-flex">
+                    <!-- Left Side -->
+                    <div class="left-side">
+                        <h2 class="highlight-title">Protect Your Seniors Digital and Financial Safety online.</h2>
+                        <p class="section-description">For cybercriminals, targeting seniors' digital lives is easy pickings. According to the FTC, cybercrimes against seniors in the U.S. account for nearly $2 billion in annual losses, with individual losses averaging $18,226 per incident. At TRSTxCyber, we use the nationally recognized EverSafe platform to help seniors and their families gain peace of mind and protection from sophisticated cyber threats.
+                        </p>
+                    </div>
+                    
+                    <!-- Right Side - Expandable Menu -->
+                    <div class="right-side">
+                        <button class="accordion">Safeguard Senior Finances</button>
+                        <div class="panel">
+                            <p class="panel-content">Have the visibility you need to all of your senior's online financial activity.</p>
+                        </div>
+                        
+                        <button class="accordion">Smart Alert System</button>
+                        <div class="panel">
+                            <div class="panel-content">
+                                <ul class="panel-list">
+                                    <li>Changes in spending and cash usage – across institutions</li>
+                                    <li>Use of dormant credit cards</li>
+                                    <li>Missing regular deposits</li>
+                                    <li>Suspicious vendors</li>
+                                    <li>Real estate title and lien changes</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <button class="accordion">Financial Transaction Visibility</button>
+                        <div class="panel">
+                            <div class="panel-content">
+                                <ul class="panel-list">
+                                    <li>Upcoming/late bills</li>
+                                    <li>Account balances – across institutions</li>
+                                    <li>Banking, credit card, investment and retirement activity</li>
+                                    <li>Credit files – from all 3 bureaus</li>
+                                    <li>Increases in regular bills</li>
+                                    <li>Home values</li>
+                                </ul>
+                                <p>…and so much more</p>
+                            </div>
+                        </div>
+                        
+                        <button class="accordion">Resolution Ease</button>
+                        <div class="panel">
+                            <div class="panel-content">
+                                <ul class="panel-list">
+                                    <li>TRST SENIOR CYBER GUARD POWERED BY EverSafe provides tools to manage the resolution process and helps you create your ideal recovery plan.</li>
+                                    <li>Help is always just a phone call away.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <button class="accordion">Prevent Identity Theft</button>
+                        <div class="panel">
+                            <div class="panel-content">
+                                <ul class="panel-list">
+                                    <li>Disrupt adversaries from stealing your SENIORS identity to commit fraud and cybercrimes.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                var acc = document.getElementsByClassName("accordion");
+                                var i;
+                                
+                                for (i = 0; i < acc.length; i++) {
+                                    acc[i].addEventListener("click", function() {
+                                        // Close all other panels first
+                                        var allAccordions = document.getElementsByClassName("accordion");
+                                        for (var j = 0; j < allAccordions.length; j++) {
+                                            // Skip the current one that was clicked
+                                            if (allAccordions[j] !== this) {
+                                                allAccordions[j].classList.remove("active");
+                                                var otherPanel = allAccordions[j].nextElementSibling;
+                                                otherPanel.style.maxHeight = null;
+                                            }
+                                        }
+                                        
+                                        // Toggle the clicked panel
+                                        this.classList.toggle("active");
+                                        var panel = this.nextElementSibling;
+                                        if (panel.style.maxHeight) {
+                                            panel.style.maxHeight = null;
+                                        } else {
+                                            panel.style.maxHeight = panel.scrollHeight + "px";
+                                        }
+                                    });
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+                
+                <!-- Feature Boxes Section -->
+                <div class="features-grid">
+                    <!-- Feature Box 1 -->
+                    <div class="feature-box senior-feature-box">
+                        <div class="feature-image-container">
+                            <img src="images/monitoring_alert.png" alt="Monitoring" class="feature-image">
+                        </div>
+                        <h3 class="feature-title">Monitoring With Personalized Alerts</h3>
+                        <p class="feature-text">AI driven proprietary technology applies enhanced analytics to build a personal profile based on your financial history. When irregular activity is detected our personalized alerts make a real difference in identifying potential scams, fraud or identity theft.</p>
+                    </div>
+                    
+                    <!-- Feature Box 2 -->
+                    <div class="feature-box senior-feature-box">
+                        <div class="feature-image-container">
+                            <img src="images/dashboard-screen.png" alt="Family Dashboard" class="feature-image">
+                        </div>
+                        <h3 class="feature-title">Consolidated Family Dashboard</h3>
+                        <p class="feature-text">TRST Senior Cyber Guard powered by Eversafe helps you stay on top of your family finances. All accounts. All institutions. All family members. All in one place. Extra bonus—notices about unpaid bills, changes in interest rates, and more.</p>
+                    </div>
+                    
+                    <!-- Feature Box 3 -->
+                    <div class="feature-box senior-feature-box">
+                        <div class="feature-image-container">
+                            <img src="images/extra-set-of-eyes.png" alt="Extra Set Of Eyes" class="feature-image">
+                        </div>
+                        <h3 class="feature-title">An "Extra Set Of Eyes" Feature</h3>
+                        <p class="feature-text">According to experts, monitoring is the most critical tool for detecting scams, fraud, and identity theft. TRST powered by Eversafe enables you to designate family members, caregivers, or trusted professionals to receive alerts and assist in monitoring.</p>
+                    </div>
+                    
+                    <!-- Feature Box 4 -->
+                    <div class="feature-box senior-feature-box">
+                        <div class="feature-image-container">
+                            <img src="images/senior-protection.png" alt="Specialized Protection" class="feature-image">
+                        </div>
+                        <h3 class="feature-title">Specialized Protection For Senior</h3>
+                        <p class="feature-text">Developed by experts in aging and fraud, EverSafe's enhanced algorithms and ai technology provide deeper protection for seniors. The age-friendly software supports powers of attorney, guardians, conservators, and trusts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
