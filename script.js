@@ -4,7 +4,7 @@ function isMobileDevice() {
     const mobileUserAgent = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
     // Check screen width (anything under 768px is considered mobile)
-    const mobileWidth = window.innerWidth <= 768;
+    const mobileWidth = window.innerWidth <= 650;
     
     console.log('Mobile detection - UserAgent:', mobileUserAgent, 'Width:', window.innerWidth, 'Is Mobile Width:', mobileWidth);
     
