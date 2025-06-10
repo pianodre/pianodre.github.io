@@ -26,8 +26,8 @@ function showMobilePopup() {
         // Create popup content
         popup.innerHTML = `
             <div class="mobile-popup-content">
-                <h3>Please Access on a Computer</h3>
-                <p>For the best experience, please view this website on a desktop or laptop computer.</p>
+                <h3>Optimal Viewing Experience</h3>
+                <p>For the best experience, please view this website on a desktop or laptop computer, or in full screen mode if you're on a smaller device.</p>
                 <button id="mobilePopupClose">Continue Anyway</button>
             </div>
         `;
