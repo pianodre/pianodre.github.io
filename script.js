@@ -1,3 +1,43 @@
+// Function to check if the user is on a mobile device
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+           (window.innerWidth <= 768);
+}
+
+// Function to create and show mobile popup
+function showMobilePopup() {
+    if (isMobileDevice()) {
+        // Create popup container
+        const popup = document.createElement('div');
+        popup.className = 'mobile-popup';
+        
+        // Create popup content
+        popup.innerHTML = `
+            <div class="mobile-popup-content">
+                <h3>Please Access on a Computer</h3>
+                <p>For the best experience, please view this website on a desktop or laptop computer.</p>
+                <button id="mobilePopupClose">Continue Anyway</button>
+            </div>
+        `;
+        
+        // Add popup to body
+        document.body.appendChild(popup);
+        
+        // Add event listener to close button
+        document.getElementById('mobilePopupClose').addEventListener('click', function() {
+            popup.style.opacity = '0';
+            setTimeout(() => {
+                popup.remove();
+            }, 300);
+        });
+        
+        // Show popup with animation
+        setTimeout(() => {
+            popup.style.opacity = '1';
+        }, 100);
+    }
+}
+
 // Function to load and insert the navigation bar
 async function loadNavigation() {
     try {
@@ -154,4 +194,9 @@ document.addEventListener('DOMContentLoaded', () => {
         setActiveNavigation();
     });
     initTechCarousel();
+    
+    // Show mobile popup after a short delay
+    setTimeout(() => {
+        showMobilePopup();
+    }, 500);
 });

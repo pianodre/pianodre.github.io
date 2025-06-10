@@ -2674,3 +2674,58 @@ a.submit-btn, .cta-box a.submit-btn, body a.submit-btn, .bottom-section a.submit
         font-size: 1.8rem;
     }
 }
+
+/* Mobile Popup Styles */
+.mobile-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-popup-content {
+    background-color: #1a1a1a;
+    border: 2px solid #00c3f5;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 195, 245, 0.4);
+    animation: popUp 0.5s ease-out forwards;
+}
+
+.mobile-popup-content h3 {
+    color: #00c3f5;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.mobile-popup-content p {
+    color: #e0e0e0;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.mobile-popup-content button {
+    background-color: #00c3f5;
+    color: #000;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.mobile-popup-content button:hover {
+    background-color: #5fb8e6;
+    transform: translateY(-2px);
+}
