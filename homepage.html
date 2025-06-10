@@ -86,6 +86,8 @@
             </div>
         </section>
 
+
+
         <section class="why-choose-section">
             <div class="why-choose-content">
                 <div class="why-choose-header">
@@ -112,6 +114,133 @@
                 </div>
             </div>
         </section>
+
+        <!-- Technology Partners Carousel Section -->
+        <section class="tech-partners-section">
+            <div class="container">
+                <h2 class="tech-partners-title">Technology Partners</h2>
+                <div class="tech-carousel-container">
+                    <button class="carousel-arrow prev-arrow" id="techPrevBtn">&lt;</button>
+                    <div class="tech-carousel" id="techCarousel">                      
+                        <div class="tech-partner-box">
+                            <img src="images/partners/BlackCloak.png" alt="BlackCloak">
+                        </div>
+                        <div class="tech-partner-box">
+                            <img src="images/partners/Cisco.png" alt="Cisco">
+                        </div>
+                        <div class="tech-partner-box">
+                            <img src="images/partners/CorkInc.png" alt="Cork Inc">
+                        </div>
+                        <div class="tech-partner-box">
+                            <img src="images/partners/FieldEffect.png" alt="Field Effect">
+                        </div>
+                        <div class="tech-partner-box">
+                            <img src="images/partners/Google.png" alt="Google">
+                        </div>
+                        <div class="tech-partner-box">
+                            <img src="images/partners/MicroSoft.png" alt="Microsoft">
+                        </div>
+                        <div class="tech-partner-box">
+                            <img src="images/partners/NextLevel.png" alt="Next Level Technologies">
+                        </div>
+                        <div class="tech-partner-box">
+                            <img src="images/partners/UniteIt.png" alt="UniteIt">
+                        </div>
+                        <!-- Placeholder boxes for remaining positions using existing images -->
+                        <div class="tech-partner-box">
+                            <img src="images/partners/Google.png" alt="Technology Partner 9">
+                        </div>
+                        <div class="tech-partner-box">
+                            <img src="images/partners/FieldEffect.png" alt="Technology Partner 10">
+                        </div>
+                    </div>
+                    <button class="carousel-arrow next-arrow" id="techNextBtn">&gt;</button>
+                </div>
+            </div>
+        </section>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all elements to animate
+            const cards = document.querySelectorAll('.card');
+            const serviceCards = document.querySelectorAll('.service-card');
+            const solutionBoxes = document.querySelectorAll('.solution-box');
+            const protectionImage = document.querySelector('.protection-image');
+            
+            // Function to check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Immediately animate elements that are visible on page load
+            cards.forEach(card => {
+                if (isInViewport(card)) {
+                    card.classList.add('animate');
+                }
+            });
+            
+            serviceCards.forEach(card => {
+                if (isInViewport(card)) {
+                    card.classList.add('animate');
+                }
+            });
+            
+            solutionBoxes.forEach(box => {
+                if (isInViewport(box)) {
+                    box.classList.add('animate');
+                }
+            });
+            
+            if (protectionImage && isInViewport(protectionImage)) {
+                protectionImage.classList.add('animate');
+            }
+            
+            // Create an Intersection Observer for elements that come into view later
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // If the element is in the viewport
+                    if (entry.isIntersecting) {
+                        // Add the animation class
+                        entry.target.classList.add('animate');
+                        
+                        // Stop observing once it's animated
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2 // Trigger when at least 20% of the element is visible
+            });
+            
+            // Observe each card
+            cards.forEach(card => {
+                if (!card.classList.contains('animate')) {
+                    observer.observe(card);
+                }
+            });
+            
+            // Observe each service card
+            serviceCards.forEach(card => {
+                if (!card.classList.contains('animate')) {
+                    observer.observe(card);
+                }
+            });
+            
+            // Observe each solution box
+            solutionBoxes.forEach(box => {
+                if (!box.classList.contains('animate')) {
+                    observer.observe(box);
+                }
+            });
+            
+            // Observe the protection image
+            if (protectionImage && !protectionImage.classList.contains('animate')) {
+                observer.observe(protectionImage);
+            }
+        });
+    </script>
 </body>
 </html>

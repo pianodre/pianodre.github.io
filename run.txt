@@ -1,0 +1,9 @@
+pkill -f "python -m http.server 8000"
+
+python -m http.server 8000
+
+kill a port
+
+lsof -i :8000
+to see Python3  1234  yourname  ...  TCP *:8000 (LISTEN)
+kill 1234

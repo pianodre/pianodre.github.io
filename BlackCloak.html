@@ -215,5 +215,72 @@
             </div>
         </section>
     </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all trust boxes and cards
+            const trustBoxes = document.querySelectorAll('.trust-box');
+            const cards = document.querySelectorAll('.card');
+            
+            // Create an Intersection Observer for trust boxes
+            const trustObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // If the element is in the viewport
+                    if (entry.isIntersecting) {
+                        // Add staggered delay for each box
+                        const box = entry.target;
+                        const delay = Array.from(trustBoxes).indexOf(box) * 150; // 150ms delay between each box
+                        
+                        // Add the animation class after the delay
+                        setTimeout(() => {
+                            box.classList.add('animate');
+                        }, delay);
+                        
+                        // Stop observing once it's animated
+                        trustObserver.unobserve(box);
+                    }
+                });
+            }, {
+                threshold: 0.3 // Trigger when at least 30% of the element is visible
+            });
+            
+            // Create an Intersection Observer for cards
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // If the element is in the viewport
+                    if (entry.isIntersecting) {
+                        // Add the animation class
+                        entry.target.classList.add('animate');
+                        
+                        // Stop observing once it's animated
+                        cardObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2 // Trigger when at least 20% of the element is visible
+            });
+            
+            // Observe each trust box
+            trustBoxes.forEach(box => {
+                trustObserver.observe(box);
+            });
+            
+            // Observe each card
+            cards.forEach(card => {
+                cardObserver.observe(card);
+            });
+            
+            // Immediately add animate class to cards if they're already visible
+            // This ensures content is visible even without scrolling
+            setTimeout(() => {
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        card.classList.add('animate');
+                    }
+                });
+            }, 100);
+        });
+    </script>
 </body>
 </html>
