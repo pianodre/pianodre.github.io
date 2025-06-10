@@ -91,7 +91,7 @@ function initTechCarousel() {
 // Function to set active navigation based on current page
 function setActiveNavigation() {
     // Get the current page filename
-    const currentPage = window.location.pathname.split('/').pop() || 'homepage.html';
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     
     // Wait for navigation to be loaded
     setTimeout(() => {
