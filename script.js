@@ -1,59 +1,4 @@
-// Function to check if the user is on a mobile device
-function isMobileDevice() {
-    // Check user agent for mobile devices
-    const mobileUserAgent = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
-    // Check screen width (anything under 768px is considered mobile)
-    const mobileWidth = window.innerWidth <= 650;
-    
-    console.log('Mobile detection - UserAgent:', mobileUserAgent, 'Width:', window.innerWidth, 'Is Mobile Width:', mobileWidth);
-    
-    return mobileUserAgent || mobileWidth;
-}
-
-// Function to create and show mobile popup
-function showMobilePopup() {
-    console.log('Checking if should show mobile popup...');
-    
-    if (isMobileDevice()) {
-        console.log('Mobile device detected, showing popup');
-        
-        // Create popup container
-        const popup = document.createElement('div');
-        popup.className = 'mobile-popup';
-        popup.style.opacity = '0'; // Start invisible
-        
-        // Create popup content
-        popup.innerHTML = `
-            <div class="mobile-popup-content">
-                <h3>Optimal Viewing Experience</h3>
-                <p>For the best experience, please view this website on a desktop or laptop computer, or in full screen mode if you're on a smaller device.</p>
-                <button id="mobilePopupClose">Continue Anyway</button>
-            </div>
-        `;
-        
-        // Add popup to body
-        document.body.appendChild(popup);
-        
-        // Force reflow to ensure CSS transitions work
-        void popup.offsetWidth;
-        
-        // Add event listener to close button
-        document.getElementById('mobilePopupClose').addEventListener('click', function() {
-            popup.style.opacity = '0';
-            setTimeout(() => {
-                popup.remove();
-            }, 300);
-        });
-        
-        // Show popup with animation
-        setTimeout(() => {
-            popup.style.opacity = '1';
-        }, 100);
-    } else {
-        console.log('Not a mobile device, popup not shown');
-    }
-}
+// Mobile popup functionality has been moved to mobile-popup.js
 
 // Function to load and insert the navigation bar
 async function loadNavigation() {
@@ -213,20 +158,4 @@ document.addEventListener('DOMContentLoaded', () => {
         setActiveNavigation();
     });
     initTechCarousel();
-    
-    // Show mobile popup after a short delay
-    setTimeout(() => {
-        showMobilePopup();
-    }, 1000); // Increased delay to ensure everything is loaded
-});
-
-// Backup check - also try on window load which happens after all resources are loaded
-window.addEventListener('load', () => {
-    console.log('Window fully loaded');
-    // If we haven't shown the popup yet, try again
-    if (!document.querySelector('.mobile-popup')) {
-        setTimeout(() => {
-            showMobilePopup();
-        }, 500);
-    }
 });

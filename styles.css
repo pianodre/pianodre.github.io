@@ -2686,47 +2686,59 @@ a.submit-btn, .cta-box a.submit-btn, body a.submit-btn, .bottom-section a.submit
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* Ensure it's above everything */
+    z-index: 9999;
     opacity: 0;
     transition: opacity 0.3s ease;
-    pointer-events: auto !important; /* Ensure it captures clicks */
+    pointer-events: auto; /* Ensure clicks are captured */
 }
 
 .mobile-popup-content {
     background-color: #1a1a1a;
     border: 2px solid #00c3f5;
-    border-radius: 8px;
     padding: 2rem;
-    max-width: 90%;
+    border-radius: 8px;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 195, 245, 0.4);
-    animation: popUp 0.5s ease-out forwards;
+    max-width: 90%;
+    box-shadow: 0 0 20px rgba(0, 195, 245, 0.3);
+    position: relative; /* Ensure proper stacking */
+    z-index: 10000; /* Higher than parent */
 }
 
 .mobile-popup-content h3 {
     color: #00c3f5;
-    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
 .mobile-popup-content p {
-    color: #e0e0e0;
     margin-bottom: 1.5rem;
-    line-height: 1.5;
+    color: #ffffff;
 }
 
 .mobile-popup-content button {
     background-color: #00c3f5;
     color: #000;
     border: none;
-    padding: 0.8rem 1.5rem;
+    padding: 1rem 1.8rem; /* Larger touch target */
     border-radius: 4px;
     font-weight: 600;
-    cursor: pointer;
+    font-size: 1.1rem; /* Larger text */
+    cursor: pointer !important;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    z-index: 10001; /* Even higher z-index */
+    display: inline-block;
+    margin: 10px auto;
+    -webkit-tap-highlight-color: rgba(0,195,245,0.5); /* Better touch feedback */
+    user-select: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Add depth */
 }
 
 .mobile-popup-content button:hover {
     background-color: #5fb8e6;
     transform: translateY(-2px);
+}
+
+.mobile-popup-content button:active {
+    background-color: #008db3;
+    transform: translateY(1px);
 }
