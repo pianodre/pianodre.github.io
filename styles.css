@@ -2682,13 +2682,14 @@ a.submit-btn, .cta-box a.submit-btn, body a.submit-btn, .bottom-section a.submit
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2000;
+    z-index: 9999; /* Ensure it's above everything */
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: auto !important; /* Ensure it captures clicks */
 }
 
 .mobile-popup-content {
