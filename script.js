@@ -150,6 +150,40 @@ function setActiveNavigation() {
     }, 100); // Small delay to ensure navigation is loaded
 }
 
+// Function to handle scroll animations
+function initScrollAnimations() {
+    // Get all the bullet points
+    const bulletPoints = document.querySelectorAll('.mdr-feature-list li');
+    
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // If the element is in the viewport
+            if (entry.isIntersecting) {
+                // Add the animation class with a delay based on the index
+                const element = entry.target;
+                const delay = Array.from(bulletPoints).indexOf(element) % 5 * 100; // Stagger effect within each list
+                
+                setTimeout(() => {
+                    element.classList.add('animate');
+                }, delay);
+                
+                // Unobserve the element after it's been animated
+                observer.unobserve(element);
+            }
+        });
+    }, {
+        root: null, // Use the viewport
+        threshold: 0.1, // Trigger when at least 10% of the element is visible
+        rootMargin: '-50px' // Trigger slightly before the element enters the viewport
+    });
+    
+    // Observe all bullet points
+    bulletPoints.forEach(bullet => {
+        observer.observe(bullet);
+    });
+}
+
 // Load navigation and initialize carousels when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded');
@@ -158,4 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setActiveNavigation();
     });
     initTechCarousel();
+    
+    // Initialize scroll animations
+    initScrollAnimations();
 });

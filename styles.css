@@ -763,6 +763,8 @@ body.it-support-page h1 {
     animation: fadeInUp 1.0s ease-out;
 }
 
+/* Removed duplicated styles */
+
 @media (max-width: 768px) {
     .it-title-screen {
         height: 350px;
@@ -2671,6 +2673,488 @@ a.submit-btn, .cta-box a.submit-btn, body a.submit-btn, .bottom-section a.submit
     }
     
     .tech-partners-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Small Business Page Styles */
+body.small-business-page header {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+body.small-business-page main.container {
+    padding-top: 0;
+    margin-top: -20px;
+}
+
+body.small-business-page h1 {
+    margin-bottom: 10px;
+}
+
+/* Small Business Title Screen */
+.sb-title-screen {
+    height: 450px;
+    width: 100%;
+    background: url("images/small-buiness-background.png") no-repeat center center;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 5rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sb-title-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.sb-title-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+}
+
+.sb-title-content h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    animation: fadeInUp 1.0s ease-out;
+}
+
+.sb-title-content p {
+    font-size: 1.5rem;
+    color: #00c3f5;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    animation: fadeInUp 1.0s ease-out 0.3s both;
+}
+
+/* MDR Intro Section */
+.mdr-intro-section {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 195, 245, 0.3);
+}
+
+.mdr-intro-content {
+    flex: 2;
+}
+
+.mdr-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 2rem;
+    position: relative;
+}
+
+.mdr-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: contain;
+    animation: float 4s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+    border-radius: 12px;
+    border: 2px solid rgba(0, 195, 245, 0.7);
+    box-shadow: 0 0 15px rgba(0, 195, 245, 0.5), inset 0 0 10px rgba(0, 195, 245, 0.2);
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mdr-image img:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 195, 245, 0.7), inset 0 0 15px rgba(0, 195, 245, 0.3);
+}
+
+/* Underglow removed */
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.mdr-intro-content h2 {
+    color: #00c3f5;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    animation: fadeIn 1.0s ease-out;
+}
+
+.mdr-tagline {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #a0a0a0;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    animation: fadeIn 1.0s ease-out 0.3s both;
+}
+
+.mdr-intro-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* MDR Features Styling */
+.mdr-features {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.mdr-feature-column {
+    flex: 1;
+}
+
+.mdr-feature-column h3 {
+    color: #00c3f5;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.mdr-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mdr-feature-list li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.mdr-feature-list li.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mdr-feature-list li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #00c3f5;
+    font-weight: bold;
+}
+
+/* Challenges Section */
+.challenges-section {
+    margin: 4rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(0, 195, 245, 0.3);
+}
+
+.challenges-section h2 {
+    color: #00c3f5;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.challenge-item {
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.challenge-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.challenge-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 195, 245, 0.2);
+}
+
+.challenge-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #ff6b6b;
+}
+
+.challenge-text {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* Benefits Section */
+.benefits-section {
+    margin: 4rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(0, 195, 245, 0.3);
+}
+
+.benefits-section h2 {
+    color: #00c3f5;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.benefit-box {
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.benefit-box.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.benefit-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 195, 245, 0.2);
+}
+
+.benefit-check {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #00c3f5;
+    font-weight: bold;
+}
+
+.benefit-box p {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* Partner section styles for small business page */
+.secondary-partner {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 195, 245, 0.3);
+}
+
+.partner-features {
+    margin-top: 1.5rem;
+}
+
+.partner-features p {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #00c3f5;
+}
+
+.partner-features ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.partner-features ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.partner-features ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #00c3f5;
+}
+
+.learn-more-btn {
+    margin-top: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #00c3f5;
+    color: #000;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #5fb8e6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Why Choose Section */
+.why-choose-section {
+    margin-top: 4rem;
+    padding: 2rem 0;
+}
+
+/* CTA Section */
+.cta-section {
+    margin: 4rem 0 2rem;
+    text-align: center;
+    padding: 3rem;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cta-section h2 {
+    color: #00c3f5;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+}
+
+.cta-section p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.primary-btn {
+    background-color: #00c3f5;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    border: 2px solid #00c3f5;
+    color: #00c3f5;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(0, 195, 245, 0.1);
+}
+
+/* Responsive styles for small business page */
+@media (max-width: 992px) {
+    .sb-title-content h2 {
+        font-size: 2.8rem;
+    }
+    
+    .partner-flex {
+        flex-direction: column;
+    }
+    
+    .partner-image {
+        margin-top: 2rem;
+        text-align: center;
+    }
+    
+    .solutions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .mdr-intro-section {
+        flex-direction: column;
+    }
+    
+    .mdr-image {
+        margin-top: 2rem;
+    }
+    
+    .mdr-features {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .challenges-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sb-title-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .sb-title-content p {
+        font-size: 1.2rem;
+    }
+    
+    .solutions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .mdr-intro-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .mdr-tagline {
+        font-size: 1.1rem;
+    }
+    
+    .challenges-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .challenges-section h2,
+    .benefits-section h2 {
         font-size: 1.8rem;
     }
 }
