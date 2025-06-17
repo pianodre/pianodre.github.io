@@ -1,3 +1,32 @@
+/* Biski Font */
+@font-face {
+    font-family: 'Biski';
+    src: url('fonts/biski/BiskiTrial-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Helvetica Font */
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fonts/helvetica/helvetica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Styled company name */
+.company-name {
+    font-family: 'Helvetica', sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.biski-x {
+    font-family: 'Biski', sans-serif;
+    color: #00c3f5;
+    font-weight: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -278,6 +307,96 @@ nav {
     transform: translateX(-50%);
     border-radius: 2px;
     animation: scroll 2s infinite;
+}
+
+/* Solution Buttons */
+.solution-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    animation: fadeIn 1s ease-in-out 1.5s forwards;
+    opacity: 0;
+}
+
+.solution-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: transparent;
+    color: #00c3f5;
+    border: 2px solid #00c3f5;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    min-width: 180px;
+    box-sizing: border-box;
+}
+
+.solution-btn:hover {
+    background-color: rgba(0, 195, 245, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.business-btn, .individual-btn {
+    /* Ensuring both buttons are exactly the same */
+    width: 200px;
+    height: 45px;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Solution Dropdown */
+.solution-btn-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.solution-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #2a2a2a;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(0, 195, 245, 0.3);
+}
+
+.solution-dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 195, 245, 0.1);
+}
+
+.solution-dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.solution-dropdown-content a:hover {
+    background-color: rgba(0, 195, 245, 0.1);
+    color: #00c3f5;
+}
+
+/* Show dropdown when active class is added via JavaScript */
+.solution-btn-dropdown.active .solution-dropdown-content {
+    display: block;
 }
 
 @keyframes fadeIn {
@@ -2704,6 +2823,17 @@ body.small-business-page h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Enterprise Title Screen */
+.enterprise-title-screen {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/small-buiness-background.png") no-repeat center center;
+    background-size: cover;
+}
+
+/* Enterprise Page Styles */
+.enterprise-page header h1 {
+    color: #00c3f5;
 }
 
 .sb-title-screen::before {
