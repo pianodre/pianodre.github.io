@@ -2693,7 +2693,7 @@ a.submit-btn, .cta-box a.submit-btn, body a.submit-btn, .bottom-section a.submit
     align-items: center;
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 40px; /* Increased padding for arrows */
+    padding: 0 60px; /* Increased padding for arrows and glow effect */
 }
 
 .tech-carousel {
@@ -2701,7 +2701,7 @@ a.submit-btn, .cta-box a.submit-btn, body a.submit-btn, .bottom-section a.submit
     overflow-x: hidden;
     scroll-behavior: smooth;
     gap: 20px;
-    padding: 15px 0;
+    padding: 15px 10px; /* Added horizontal padding to prevent glow cropping */
     width: 100%;
 }
 
@@ -2827,7 +2827,7 @@ body.small-business-page h1 {
 
 /* Enterprise Title Screen */
 .enterprise-title-screen {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/small-buiness-background.png") no-repeat center center;
+    background: url("images/small-buiness-background.png") no-repeat center center;
     background-size: cover;
 }
 
