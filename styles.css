@@ -3132,11 +3132,10 @@ body.small-business-page h1 {
 
 /* Footer Styles */
 footer {
-    background-color: #1a1a1a;
+    background-color: black;
     color: #ffffff;
-    padding: 3rem 0;
+    padding: 5rem 0;
     margin-top: 3rem;
-    border-top: 3px solid #00c3f5;
 }
 
 .footer-container {
@@ -3153,6 +3152,14 @@ footer {
     flex: 1;
     min-width: 300px;
     padding-left: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.footer-left.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .footer-left h3 {
@@ -3182,11 +3189,19 @@ footer {
     justify-content: flex-end;
     align-items: center;
     min-width: 300px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.footer-right.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .footer-logo {
     display: block;
-    max-width: 380px;
+    max-width: 580px;
 }
 
 .footer-logo-img {
