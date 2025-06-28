@@ -2103,7 +2103,6 @@ a.submit-btn, .cta-box a.submit-btn, body a.submit-btn, .bottom-section a.submit
 
 /* Financial Protection Section Styles */
 .financial-protection-section {
-    background-color: #000000;
     padding: 100px 0;
     margin: 40px 0;
     width: 100vw;
@@ -2112,6 +2111,18 @@ a.submit-btn, .cta-box a.submit-btn, body a.submit-btn, .bottom-section a.submit
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.4);
 }
 
 .protection-flex {
@@ -2445,8 +2456,6 @@ a.submit-btn, .cta-box a.submit-btn, body a.submit-btn, .bottom-section a.submit
 
 /* Industries We Serve Section */
 .industries-section {
-    background-color: #000000;
-    background-image: linear-gradient(to bottom, #000000, #0a0a0a, #121212);
     padding: 120px 0;
     margin-top: 60px;
     width: 100vw;
@@ -2460,6 +2469,18 @@ a.submit-btn, .cta-box a.submit-btn, body a.submit-btn, .bottom-section a.submit
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
+}
+
+.background-video-industries {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.4);
+    opacity: 1.0;
 }
 
 .industries-header {

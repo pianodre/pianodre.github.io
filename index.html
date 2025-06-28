@@ -96,6 +96,9 @@
 
         <!-- Financial Protection Section -->
         <section class="financial-protection-section">
+            <video class="background-video" autoplay muted loop id="backgroundVideo">
+                <source src="videos/lines.mp4" type="video/mp4">
+            </video>
             <div class="container">
                 <div class="protection-flex">
                     <!-- Left Side - Image -->
@@ -193,6 +196,12 @@
     </main>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Set video playback speed to 80% (reducing by 20%)
+            const backgroundVideo = document.getElementById('backgroundVideo');
+            if (backgroundVideo) {
+                backgroundVideo.playbackRate = 0.7;
+            }
+            
             // Get all elements to animate
             const cards = document.querySelectorAll('.card');
             const serviceCards = document.querySelectorAll('.service-card');

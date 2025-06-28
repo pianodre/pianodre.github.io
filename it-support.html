@@ -78,6 +78,9 @@
         </div>
 
         <div class="industries-section">
+            <video class="background-video-industries" autoplay muted loop id="industriesBackgroundVideo">
+                <source src="videos/blue.mp4" type="video/mp4">
+            </video>
             <div class="container">
                 <div class="industries-header">
                     <h2 class="industries-title">Industries We Serve</h2>
@@ -190,6 +193,12 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Set video playback speed to 80%
+            const industriesBackgroundVideo = document.getElementById('industriesBackgroundVideo');
+            if (industriesBackgroundVideo) {
+                industriesBackgroundVideo.playbackRate = 0.8;
+            }
+            
             const carousel = document.querySelector('.industries-carousel');
             const prevArrow = document.querySelector('.prev-arrow');
             const nextArrow = document.querySelector('.next-arrow');
