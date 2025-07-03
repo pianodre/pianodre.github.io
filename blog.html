@@ -37,12 +37,15 @@
         
         .blog-image {
             width: 100%;
-            height: 240px;
+            height: 320px; /* Further increased height to take up more than half of each box */
             object-fit: cover;
+            display: block;
         }
         
         .blog-content {
-            padding: 1.5rem;
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
         }
         
         .blog-date {
@@ -69,6 +72,7 @@
             font-weight: 600;
             text-decoration: none;
             transition: color 0.2s ease;
+            margin-top: 0.5rem;
         }
         
         .blog-read-more:hover {
@@ -82,7 +86,7 @@
         
         .blog-header h1 {
             font-size: 2.5rem;
-            color: #ffffff;
+            color: #00c3f5;
             margin-bottom: 1rem;
         }
         
@@ -121,133 +125,121 @@
         <div class="blog-grid">
             <!-- Blog Post 1 -->
             <article class="blog-post">
-                <img src="images/placeholder-1.jpg" alt="Blog Post Image" class="blog-image">
+                <img src="images/blog/blog1.jpg" alt="SEC Cybersecurity Requirements" class="blog-image">
                 <div class="blog-content">
-                    <p class="blog-date">June 25, 2025</p>
-                    <h2 class="blog-title">5 Essential Cybersecurity Practices for Small Businesses</h2>
-                    <p class="blog-excerpt">Discover the fundamental cybersecurity practices that every small business should implement to protect sensitive data and prevent cyber attacks.</p>
-                    <a href="#" class="blog-read-more">Read More →</a>
+                    <p class="blog-date">July 2, 2025</p>
+                    <h2 class="blog-title">How Could Your Business Be Impacted by the New SEC Cybersecurity Requirements?</h2>
+                    <a href="#" class="blog-read-more" target="_blank" rel="noopener noreferrer">Read More</a>
                 </div>
             </article>
 
             <!-- Blog Post 2 -->
             <article class="blog-post">
-                <img src="images/placeholder-2.jpg" alt="Blog Post Image" class="blog-image">
+                <img src="images/blog/blog2.jpg" alt="Blog Post Image" class="blog-image">
                 <div class="blog-content">
                     <p class="blog-date">June 20, 2025</p>
-                    <h2 class="blog-title">Understanding Cyber Insurance: What You Need to Know</h2>
-                    <p class="blog-excerpt">Learn about the importance of cyber insurance, what it covers, and how it can protect your business in the event of a data breach.</p>
-                    <a href="#" class="blog-read-more">Read More →</a>
+                    <h2 class="blog-title">Small Businesses Are Attacked by Hackers 3x More than Larger Ones</h2>
+                    <a href="#" class="blog-read-more" target="_blank" rel="noopener noreferrer">Read More</a>
                 </div>
             </article>
 
             <!-- Blog Post 3 -->
             <article class="blog-post">
-                <img src="images/placeholder-3.jpg" alt="Blog Post Image" class="blog-image">
+                <img src="images/blog/blog3.jpg" alt="Blog Post Image" class="blog-image">
                 <div class="blog-content">
                     <p class="blog-date">June 15, 2025</p>
-                    <h2 class="blog-title">The Rising Threat of Ransomware: How to Protect Your Data</h2>
-                    <p class="blog-excerpt">Explore the growing threat of ransomware attacks and learn effective strategies to safeguard your valuable data from cybercriminals.</p>
-                    <a href="#" class="blog-read-more">Read More →</a>
+                    <h2 class="blog-title">What is Zero-Click Malware? How Do You Fight It?</h2>
+                    <a href="#" class="blog-read-more" target="_blank" rel="noopener noreferrer">Read More</a>
                 </div>
             </article>
 
             <!-- Blog Post 4 -->
             <article class="blog-post">
-                <img src="images/placeholder-4.jpg" alt="Blog Post Image" class="blog-image">
+                <img src="images/blog/blog4.jpg" alt="Blog Post Image" class="blog-image">
                 <div class="blog-content">
                     <p class="blog-date">June 10, 2025</p>
-                    <h2 class="blog-title">Cloud Security Best Practices for Enterprise Organizations</h2>
-                    <p class="blog-excerpt">Discover how enterprise organizations can enhance their cloud security posture with these proven best practices and strategies.</p>
-                    <a href="#" class="blog-read-more">Read More →</a>
+                    <h2 class="blog-title">Cybersecurity Awareness: Strengthening Your Team's Defense with Essential Cyber Hygiene</h2>
+                    <a href="#" class="blog-read-more" target="_blank" rel="noopener noreferrer">Read More</a>
                 </div>
             </article>
 
             <!-- Blog Post 5 -->
             <article class="blog-post">
-                <img src="images/placeholder-5.jpg" alt="Blog Post Image" class="blog-image">
+                <img src="images/blog/blog5.jpg" alt="Blog Post Image" class="blog-image">
                 <div class="blog-content">
                     <p class="blog-date">June 5, 2025</p>
-                    <h2 class="blog-title">The Importance of Multi-Factor Authentication</h2>
-                    <p class="blog-excerpt">Learn why multi-factor authentication is crucial for securing your accounts and how to implement it effectively across your organization.</p>
-                    <a href="#" class="blog-read-more">Read More →</a>
+                    <h2 class="blog-title">Does Your Business Have Any Cybersecurity Skeletons in the Closet?</h2>
+                    <a href="#" class="blog-read-more" target="_blank" rel="noopener noreferrer">Read More</a>
                 </div>
             </article>
 
             <!-- Blog Post 6 -->
             <article class="blog-post">
-                <img src="images/placeholder-6.jpg" alt="Blog Post Image" class="blog-image">
+                <img src="images/blog/blog6.jpg" alt="Blog Post Image" class="blog-image">
                 <div class="blog-content">
                     <p class="blog-date">May 30, 2025</p>
-                    <h2 class="blog-title">Protecting Senior Citizens from Cyber Scams</h2>
-                    <p class="blog-excerpt">Explore effective strategies to help senior citizens identify and avoid common cyber scams targeting their demographic.</p>
-                    <a href="#" class="blog-read-more">Read More →</a>
+                    <h2 class="blog-title">What Is SaaS Ransomware - How Can You Defend Against It</h2>
+                    <a href="#" class="blog-read-more" target="_blank" rel="noopener noreferrer">Read More</a>
                 </div>
             </article>
 
             <!-- Blog Post 7 -->
             <article class="blog-post">
-                <img src="images/placeholder-7.jpg" alt="Blog Post Image" class="blog-image">
+                <img src="images/blog/blog7.jpg" alt="Blog Post Image" class="blog-image">
                 <div class="blog-content">
                     <p class="blog-date">May 25, 2025</p>
-                    <h2 class="blog-title">Cybersecurity Training: Empowering Your Employees</h2>
-                    <p class="blog-excerpt">Discover how effective cybersecurity training programs can transform employees from vulnerabilities into your strongest security assets.</p>
-                    <a href="#" class="blog-read-more">Read More →</a>
+                    <h2 class="blog-title">6 Reasons Access Management Has Become a Critical Part of Cybersecurity</h2>
+                    <a href="#" class="blog-read-more" target="_blank" rel="noopener noreferrer">Read More</a>
                 </div>
             </article>
 
             <!-- Blog Post 8 -->
             <article class="blog-post">
-                <img src="images/placeholder-8.jpg" alt="Blog Post Image" class="blog-image">
+                <img src="images/blog/blog8.jpg" alt="Blog Post Image" class="blog-image">
                 <div class="blog-content">
                     <p class="blog-date">May 20, 2025</p>
-                    <h2 class="blog-title">Securing Your Remote Workforce: Best Practices</h2>
-                    <p class="blog-excerpt">Learn essential strategies for maintaining robust security when managing a distributed workforce in today's hybrid work environment.</p>
-                    <a href="#" class="blog-read-more">Read More →</a>
+                    <h2 class="blog-title">Why You Need to Understand "Secure by Design" Cybersecurity Practices</h2>
+                    <a href="#" class="blog-read-more" target="_blank" rel="noopener noreferrer">Read More</a>
                 </div>
             </article>
 
             <!-- Blog Post 9 -->
             <article class="blog-post">
-                <img src="images/placeholder-9.jpg" alt="Blog Post Image" class="blog-image">
+                <img src="images/blog/blog9.jpg" alt="Blog Post Image" class="blog-image">
                 <div class="blog-content">
                     <p class="blog-date">May 15, 2025</p>
-                    <h2 class="blog-title">The Role of AI in Modern Cybersecurity</h2>
-                    <p class="blog-excerpt">Explore how artificial intelligence and machine learning are revolutionizing threat detection and response in cybersecurity operations.</p>
-                    <a href="#" class="blog-read-more">Read More →</a>
+                    <h2 class="blog-title">Top 7 Cybersecurity Risks of Remote Work & How to Address Them</h2>
+                    <a href="#" class="blog-read-more" target="_blank" rel="noopener noreferrer">Read More</a>
                 </div>
             </article>
 
             <!-- Blog Post 10 -->
             <article class="blog-post">
-                <img src="images/placeholder-10.jpg" alt="Blog Post Image" class="blog-image">
+                <img src="images/blog/blog10.jpg" alt="Blog Post Image" class="blog-image">
                 <div class="blog-content">
                     <p class="blog-date">May 10, 2025</p>
-                    <h2 class="blog-title">Understanding Zero Trust Security Architecture</h2>
-                    <p class="blog-excerpt">Learn about the principles of Zero Trust security and how implementing this framework can significantly enhance your organization's security posture.</p>
-                    <a href="#" class="blog-read-more">Read More →</a>
+                    <h2 class="blog-title">7 Advantages of Adopting a Defense-in-Depth Cybersecurity Strategy</h2>
+                    <a href="#" class="blog-read-more" target="_blank" rel="noopener noreferrer">Read More</a>
                 </div>
             </article>
 
             <!-- Blog Post 11 -->
             <article class="blog-post">
-                <img src="images/placeholder-11.jpg" alt="Blog Post Image" class="blog-image">
+                <img src="images/blog/blog11.jpg" alt="Blog Post Image" class="blog-image">
                 <div class="blog-content">
                     <p class="blog-date">May 5, 2025</p>
-                    <h2 class="blog-title">Compliance Frameworks: GDPR, CCPA, and Beyond</h2>
-                    <p class="blog-excerpt">Navigate the complex landscape of data privacy regulations and learn how to maintain compliance while protecting customer information.</p>
-                    <a href="#" class="blog-read-more">Read More →</a>
+                    <h2 class="blog-title">Business Email Compromise Jumped 81% Last Year! Learn How to Fight It</h2>
+                    <a href="#" class="blog-read-more" target="_blank" rel="noopener noreferrer">Read More</a>
                 </div>
             </article>
 
             <!-- Blog Post 12 -->
             <article class="blog-post">
-                <img src="images/placeholder-12.jpg" alt="Blog Post Image" class="blog-image">
+                <img src="images/blog/blog12.jpg" alt="Blog Post Image" class="blog-image">
                 <div class="blog-content">
                     <p class="blog-date">May 1, 2025</p>
-                    <h2 class="blog-title">Incident Response Planning: Preparing for the Inevitable</h2>
-                    <p class="blog-excerpt">Develop an effective incident response plan to minimize damage and recovery time when security breaches occur in your organization.</p>
-                    <a href="#" class="blog-read-more">Read More →</a>
+                    <h2 class="blog-title">How to Use Threat Modeling to Reduce Your Cybersecurity Risk</h2>
+                    <a href="#" class="blog-read-more" target="_blank" rel="noopener noreferrer">Read More</a>
                 </div>
             </article>
         </div>
