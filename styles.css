@@ -194,7 +194,6 @@ nav {
     height: calc(100vh - 80px); /* Subtract the body padding */
     width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #1a1a1a;
@@ -202,20 +201,55 @@ nav {
     margin-top: -80px; /* Pull up to fill the space */
 }
 
-.hero-content {
-    text-align: center;
-    max-width: 800px;
-    padding: 2rem;
+.hero-container {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    padding: 2rem 0 2rem 2rem;
+}
+
+.hero-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: 2rem;
+    padding-left: 2%;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 0;
+    overflow: hidden;
+}
+
+.hero-right-img {
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+    animation: fadeIn 1.5s ease-in-out;
+    margin-top: 10rem;
+    margin-right: 0;
+    position: relative;
+    right: 0;
+    display: block;
+    transform: scale(1.2);
+    align-items: center; 
 }
 
 .hero-logo {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
 }
 
 .hero-logo-img {
-    max-width: 650px;
+    max-width: 25rem;
     height: auto;
-    margin-top: 5rem;
     animation: fadeIn 1.5s ease-in-out;
 }
 
@@ -229,9 +263,9 @@ nav {
 }
 
 .hero-tagline {
-    max-width: 800px;
-    margin: 0 auto 1.5rem;
-    text-align: center;
+    max-width: 600px;
+    margin: 0 0 1.5rem;
+    text-align: left;
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -240,24 +274,30 @@ nav {
     line-height: 1.5;
     color: #e0e0e0;
     font-weight: 500;
-    padding: 0 1rem;
+    padding: 0;
     margin-bottom: 0.5rem;
 }
 
 .services-line {
     white-space: nowrap;
     display: block;
-    text-align: center;
+    text-align: left;
 }
 
 .support-line {
     margin-top: 0.5rem;
-    text-align: center;
-    margin-bottom: 60px;
+    text-align: left;
+    margin-bottom: 2rem;
+    color: #878787;
+}
+
+.highlight-security {
+    color: #00c3f5;
+    font-weight: 700;
 }
 
 .highlight-service {
-    color: #00c3f5;
+    color: white;
     font-weight: 700;
     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
     transition: color 0.3s ease;
@@ -312,9 +352,9 @@ nav {
 /* Solution Buttons */
 .solution-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     animation: fadeIn 1s ease-in-out 1.5s forwards;
     opacity: 0;
 }
@@ -2818,9 +2858,48 @@ a.submit-btn, .cta-box a.submit-btn, body a.submit-btn, .bottom-section a.submit
 }
 
 /* Small Business Page Styles */
+/* Blue banner header styling for the Business Solutions section */
 body.small-business-page header {
-    margin-bottom: 0;
+    background-color: #00c3f5;
+    width: 100%;
+    position: relative;
+    margin-top: -80px;
+    padding-top: 80px;
     padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+body.small-business-page header .container {
+    margin: 0;
+    padding: 1.2rem 2.5rem;
+}
+
+body.small-business-page header h1 {
+    color: black;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 0.75rem;
+}
+
+/* Responsive styles for the blue banner header */
+@media (max-width: 768px) {
+    body.small-business-page header {
+        margin-top: -60px;
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    body.small-business-page header {
+        margin-top: -50px;
+        padding-top: 50px;
+    }
+    
+    body.small-business-page header h1 {
+        font-size: 1rem;
+    }
 }
 
 body.small-business-page main.container {
@@ -2852,9 +2931,139 @@ body.small-business-page h1 {
     background-size: cover;
 }
 
+/* BlackCloak Page Styles */
+/* Blue banner header styling for the BlackCloak Services section */
+body.inner-page header {
+    background-color: #00c3f5;
+    width: 100%;
+    position: relative;
+    margin-top: -80px;
+    padding-top: 80px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+body.inner-page header .container {
+    margin: 0;
+    padding: 1.2rem 2.5rem;
+}
+
+body.inner-page header h1 {
+    color: black;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 0.75rem;
+}
+
+/* Responsive styles for the BlackCloak blue banner header */
+@media (max-width: 768px) {
+    body.inner-page header {
+        margin-top: -60px;
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    body.inner-page header {
+        margin-top: -50px;
+        padding-top: 50px;
+    }
+    
+    body.inner-page header h1 {
+        font-size: 1rem;
+    }
+}
+
+/* IT Support Page Styles */
+/* Blue banner header styling for the IT Support Services section */
+body.it-support-page header {
+    background-color: #00c3f5;
+    width: 100%;
+    position: relative;
+    margin-top: -80px;
+    padding-top: 80px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+body.it-support-page header .container {
+    margin: 0;
+    padding: 1.2rem 2.5rem;
+}
+
+body.it-support-page header h1 {
+    color: black;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 0.75rem;
+}
+
+/* Responsive styles for the IT Support blue banner header */
+@media (max-width: 768px) {
+    body.it-support-page header {
+        margin-top: -60px;
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    body.it-support-page header {
+        margin-top: -50px;
+        padding-top: 50px;
+    }
+    
+    body.it-support-page header h1 {
+        font-size: 1rem;
+    }
+}
+
 /* Enterprise Page Styles */
-.enterprise-page header h1 {
-    color: #00c3f5;
+/* Blue banner header styling for the Enterprise Solutions section */
+body.enterprise-page header {
+    background-color: #00c3f5;
+    width: 100%;
+    position: relative;
+    margin-top: -80px;
+    padding-top: 80px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+body.enterprise-page header .container {
+    margin: 0;
+    padding: 1.2rem 2.5rem;
+}
+
+body.enterprise-page header h1 {
+    color: black;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 0.75rem;
+}
+
+/* Responsive styles for the enterprise blue banner header */
+@media (max-width: 768px) {
+    body.enterprise-page header {
+        margin-top: -60px;
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    body.enterprise-page header {
+        margin-top: -50px;
+        padding-top: 50px;
+    }
+    
+    body.enterprise-page header h1 {
+        font-size: 1rem;
+    }
 }
 
 .sb-title-screen::before {
