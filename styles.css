@@ -215,8 +215,8 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-right: 2rem;
-    padding-left: 2%;
+    padding-right: 1rem;
+    padding-left: 5%;
 }
 
 .hero-right {
@@ -226,6 +226,10 @@ nav {
     align-items: center;
     padding-right: 0;
     overflow: hidden;
+    position: relative;
+    background-image: url('images/X-Fade-Pattern.png');
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-right-img {
@@ -233,7 +237,7 @@ nav {
     max-height: 75vh;
     object-fit: contain;
     animation: fadeIn 1.5s ease-in-out;
-    margin-top: 10rem;
+    margin-top: 0;
     margin-right: 0;
     position: relative;
     right: 0;
@@ -288,12 +292,11 @@ nav {
     margin-top: 0.5rem;
     text-align: left;
     margin-bottom: 2rem;
-    color: #878787;
+    color: #919090 !important;
 }
 
 .highlight-security {
     color: #00c3f5;
-    font-weight: 700;
 }
 
 .highlight-service {
