@@ -9,6 +9,7 @@
     <script src="mobile-popup.js" defer></script>
     <script src="script.js" defer></script>
     <script src="footer.js" defer></script>
+    <script src="word-rotator.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Business dropdown click functionality
@@ -42,8 +43,8 @@
                     <p class="services-line">
                         <span class="highlight-service">Trusted by businesses big and small.</span>
                     </p>
-                    <p class="support-line">
-                        Cyber<span class="highlight-security">security</span> on your terms
+                    <p class="support-line" id="tagline-container">
+                        <span class="tagline-static">Cyber</span><span id="rotating-word" class="highlight-security">security</span><span class="tagline-static"> on your terms</span>
                     </p>
                     <div class="solution-buttons">
                         <div class="solution-btn-dropdown" id="businessDropdown">

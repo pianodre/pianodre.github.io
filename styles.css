@@ -293,6 +293,28 @@ nav {
     text-align: left;
     margin-bottom: 2rem;
     color: #919090 !important;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.tagline-static {
+    color: inherit;
+}
+
+.letter {
+    display: inline-block;
+    transform-origin: center;
+    opacity: 1 !important;
+}
+
+.tagline-static, .highlight-security {
+    display: inline-block;
+    white-space: pre;
+}
+
+.space {
+    display: inline-block;
+    width: 0.3em;
 }
 
 .highlight-security {
