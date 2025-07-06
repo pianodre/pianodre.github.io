@@ -17,9 +17,16 @@
     </header>
     
     <div class="sb-title-screen">
+        <video class="background-video-sb" autoplay muted loop id="sbBackgroundVideo">
+            <source src="videos/MetricsVid.mp4" type="video/mp4">
+        </video>
         <div class="sb-title-content container">
-            <h2>IN WHOLE CYBER SECURITY SOLUTION</h2>
-            <p>Comprehensive protection tailored for small businesses</p>
+            <h2 style="color: #00c3f5;">Comprehensive Cyber Solutions</h2>
+            <p style="color: white;">Comprehensive protection & support tailored for your small business</p>
+            <div class="sb-title-buttons">
+                <a href="#" class="sb-button">How It Works</a>
+                <a href="#" class="sb-button">Get Protected</a>
+            </div>
         </div>
     </div>
     
@@ -518,6 +525,12 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Set video playback speed to 80%
+            const sbBackgroundVideo = document.getElementById('sbBackgroundVideo');
+            if (sbBackgroundVideo) {
+                sbBackgroundVideo.playbackRate = 0.8;
+            }
+            
             // Reveal animation for elements
             const revealElements = document.querySelectorAll('.reveal-element');
             
