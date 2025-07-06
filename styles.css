@@ -2973,8 +2973,7 @@ body.small-business-page h1 {
 
 /* Enterprise Title Screen */
 .enterprise-title-screen {
-    background: url("images/small-buiness-background.png") no-repeat center center;
-    background-size: cover;
+    margin-bottom: 2rem;
 }
 
 /* BlackCloak Page Styles */
