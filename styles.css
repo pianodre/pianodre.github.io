@@ -3063,7 +3063,7 @@ body.inner-page header h1 {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    gap: 5rem; /* Very small gap between text and buttons */
+    gap: 2rem; /* Reduced gap between text and buttons */
 }
 
 .bc-title-text {
