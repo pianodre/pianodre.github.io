@@ -2027,8 +2027,8 @@ a.submit-btn, .cta-box a.submit-btn, body a.submit-btn, .bottom-section a.submit
 }
 
 @keyframes scroll-left {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-150%); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 
 /* Video and Benefits Section Styles */
@@ -3031,7 +3031,6 @@ body.inner-page header h1 {
     width: 100%;
     position: relative;
     margin-bottom: 5rem;
-    margin-top: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
