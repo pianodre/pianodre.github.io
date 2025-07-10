@@ -4126,6 +4126,101 @@ footer {
     }
 }
 
+/* Scroll Animation Classes */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: opacity 0.9s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1.2);
+    will-change: opacity, transform;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Vulnerability Scan Section */
+.vulnerability-scan-section {
+    padding: 5rem 0;
+    margin-top: 0rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Removed background gradient */
+
+.vulnerability-scan-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #222;
+    border-radius: 8px;
+    padding: 35px;
+    border: 1px solid #333;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.vulnerability-scan-section h2 {
+    color: #00c3f5;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.vulnerability-scan-section p {
+    color: #e0e0e0;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.scan-disclaimer {
+    font-size: 1rem;
+    color: #b0b0b0;
+    font-style: italic;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.scan-button-container {
+    margin-top: 2rem;
+}
+
+.scan-button {
+    display: inline-block;
+    background-color: #00c3f5;
+    color: #000;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.scan-button:hover {
+    background-color: #5fb4d9;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .vulnerability-scan-section h2 {
+        font-size: 2rem;
+    }
+    
+    .vulnerability-scan-section p {
+        font-size: 1rem;
+    }
+    
+    .scan-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
 /* Testimonials Section */
 .testimonials-section {
     padding: 8rem 0 8rem;

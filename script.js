@@ -155,8 +155,11 @@ function initScrollAnimations() {
     // Get all the bullet points
     const bulletPoints = document.querySelectorAll('.mdr-feature-list li');
     
-    // Create an Intersection Observer
-    const observer = new IntersectionObserver((entries) => {
+    // Get all sections that should fade in on scroll
+    const fadeInSections = document.querySelectorAll('.scroll-animate.fade-in-section');
+    
+    // Create an Intersection Observer for bullet points
+    const bulletObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             // If the element is in the viewport
             if (entry.isIntersecting) {
@@ -169,7 +172,7 @@ function initScrollAnimations() {
                 }, delay);
                 
                 // Unobserve the element after it's been animated
-                observer.unobserve(element);
+                bulletObserver.unobserve(element);
             }
         });
     }, {
@@ -178,9 +181,32 @@ function initScrollAnimations() {
         rootMargin: '-50px' // Trigger slightly before the element enters the viewport
     });
     
+    // Create an Intersection Observer for fade-in sections
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // If the section is in the viewport
+            if (entry.isIntersecting) {
+                // Add the visible class to trigger the animation
+                entry.target.classList.add('visible');
+                
+                // Unobserve the section after it's been animated
+                sectionObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null, // Use the viewport
+        threshold: 0.15, // Trigger when at least 15% of the section is visible
+        rootMargin: '-100px' // Trigger slightly before the section enters the viewport
+    });
+    
     // Observe all bullet points
     bulletPoints.forEach(bullet => {
-        observer.observe(bullet);
+        bulletObserver.observe(bullet);
+    });
+    
+    // Observe all fade-in sections
+    fadeInSections.forEach(section => {
+        sectionObserver.observe(section);
     });
 }
 
